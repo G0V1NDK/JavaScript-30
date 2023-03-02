@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCMJRpt5g-vTEvNhKiNQfqY2RAcZT8GnOcGNV-c-R-7TQIpJx1a_cLLXB8yD1vzmdGMDM&usqp=CAU" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main class="keys">
+        <div data-key="65" class="key">
+            <kbd>A</kbd>
+            <span class="text">KICK</span>
+        </div>
+        <div data-key="83" class="key">
+            <kbd>S</kbd>
+            <span class="text">CLAP</span>
+        </div>
+        <div data-key="75" class="key">
+            <kbd>K</kbd>
+            <span class="text">HI-HAT</span>
+        </div>
+        <div data-key="76" class="key">
+            <kbd>L</kbd>
+            <span class="text">SNARE</span>
+        </div>
+    </main>
+
+
+    <footer class="foot">Made with ❤ by GoKu</footer>
+    
+    <audio data-key="65" src="./sounds/kick.wav"></audio>
+    <audio data-key="83" src="./sounds/clap.wav"></audio>
+    <audio data-key="75" src="./sounds/hihat.wav"></audio>
+    <audio data-key="76" src="./sounds/snare.wav"></audio>
+
+    <!-- Js -->
+    <script src="./index.js"></script>
+</body>
+</html>
