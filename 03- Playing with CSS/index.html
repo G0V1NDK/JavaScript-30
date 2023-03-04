@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing with CSS</title>
+</head>
+<!-- css -->
+<style>
+    body{
+        /* background-image: linear-gradient(to right top, #051937, #002462, #002d8e, #0032ba, #392fe3); */
+        color: white;
+        background-color: #0647b8;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    label{
+        font-size: large;
+        padding: 0 10px;
+    }
+
+    .changing-value{
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+    }
+
+    .img-container{
+        display: flex;
+        justify-content: center;
+        height: 500px;
+    }
+
+    img{
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+        
+    }
+
+    :root{
+        --base: #fff;
+        --spacing: 10px;
+        --blur: 10px;
+    }
+</style>
+
+<body>
+    <h1>Playing with CSS Variables</h1>
+
+    <div class="main">
+        <div class="changing-value">
+            <label for="spacing">Spacing</label>
+            <input type="range" name="spacing" min="0" max="25" value="10" data-sizing="px">
+
+            <label for="blur">Blur</label>
+            <input type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+
+            <label for="base">Base Color</label>
+            <input type="color" name="base" id="" value="#2323">
+        </div>
+        <div class="img-container">
+            <img src="https://images.pexels.com/photos/3002676/pexels-photo-3002676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        </div>
+    </div>
+
+</body>
+
+<!-- js -->
+<script>
+    // getting all the elemnt that we need to change
+    const inputs = document.querySelectorAll('.changing-value input');
+    // this will update the variable according the specified value
+    function handleUpadate(){
+        const suffix = this.dataset.sizing || '';
+        document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    }
+    // this iterate to nodelist and attach a eventListener to it which will update the value from the function when invoked
+    inputs.forEach(input => input.addEventListener('change', handleUpadate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpadate));
+
+</script>
+
+</html>
